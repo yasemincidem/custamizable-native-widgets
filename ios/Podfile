@@ -29,6 +29,9 @@ target 'customizablenativewidgets' do
     # Reference: https://github.com/software-mansion/react-native-screens/issues/842#issuecomment-812543933
     installer.pods_project.targets.each do |target|
       if (target.name&.eql?('FBReactNativeSpec'))
+       target.build_configurations.each do |config|
+              config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+        end
         target.build_phases.each do |build_phase|
           if (build_phase.respond_to?(:name) && build_phase.name.eql?('[CP-User] Generate Specs'))
             target.build_phases.move(build_phase, 0)
