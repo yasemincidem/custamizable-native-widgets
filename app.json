@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "customizable-native-widgets",
+    "slug": "customizable-native-widgets",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "customizable-native-widgets"
+}
